@@ -35,7 +35,3 @@ class ExecutorService
 
 end
 
-
-x = ExecutorService.new(10)
-(1..100).each{|i| x.submit(i){|j| puts j}}
-x.join
