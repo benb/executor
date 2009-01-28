@@ -1,0 +1,12 @@
+Simple thread pool for Ruby. Not well tested, but seems to work. Released under the "MIT" license
+
+
+example script, using 10 threads to print out numbers from 1..100 alongside the thread's name
+
+
+require "rubygems"
+require "executor"
+
+x = ExecutorService.new(10)
+(1..100).each{|i| x.submit(i){|j| puts Thread.current.to_s  + " " + j.to_s}}
+x.join
